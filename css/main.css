@@ -4,12 +4,10 @@
 body {
 	padding-top: 40px;
 	padding-bottom: 40px;
-
 	font-family: "Cairo", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	font-weight: 300;
-
 	background-color: #eee;
 }
 * {
@@ -27,7 +25,6 @@ input[type="text"] {
 	height: 30px;
 	min-width: 200px;
 	padding: 0 5px;
-
 	border: 1px solid #dedede;
 }
 input[type="button"],
@@ -35,9 +32,7 @@ button {
 	height: 30px;
 	margin-top: -1px;
 	margin-left: -5px;
-
 	cursor: pointer;
-
 	color: #fff;
 	border: 1px solid #000;
 	outline: none;
@@ -63,7 +58,6 @@ button {
 }
 .feed-filter {
 	margin-bottom: 20px;
-
 	text-align: center;
 }
 .feed-item.feed-filter {
@@ -71,9 +65,7 @@ button {
 }
 .feed-filter-input {
 	display: inline-block;
-
 	vertical-align: middle;
-
 	outline: none;
 }
 .feed-filter-item {
@@ -85,19 +77,15 @@ button {
 .feed-msg {
 	display: flex;
 	flex-direction: column;
-
 	text-align: center;
-
 	justify-content: center;
 }
 
 .feed-item {
 	position: relative;
-
 	min-height: 90px;
 	padding: 20px;
 	overflow: hidden;
-
 	background-color: #fff;
 }
 .feed-item:not(:last-child) {
@@ -107,11 +95,9 @@ button {
 	position: absolute;
 	top: 20px;
 	left: 20px;
-
 	width: 50px;
 	height: 50px;
 	overflow: hidden;
-
 	border-radius: 5px;
 	background: #dedede;
 }
@@ -126,7 +112,6 @@ button {
 }
 .feed-title a {
 	transition: color .2s linear;
-
 	color: #000;
 }
 .feed-title a:hover {
@@ -135,18 +120,14 @@ button {
 .feed-description {
 	margin-top: 5px;
 	margin-bottom: 10px;
-
 	font-size: 14px;
 }
 ul.feed-stats {
 	padding-left: 0;
 	margin: 0;
-
 	font-size: 14px;
 	list-style: none;
-
 	text-transform: capitalize;
-
 	color: #4a4a4a;
 }
 ul.feed-stats li {
@@ -162,25 +143,21 @@ ul.feed-stats li:not(:last-child) {
 	height: auto;
 	padding: 20px;
 	margin: 20px 0 0 0;
-
 	font-weight: 600;
-
 	transition: background-color .2s linear;
-
 	border: none;
 }
 .feed-pagination-btn.disabled,
 .feed-pagination-btn.disabled:hover {
 	cursor: default;
-
 	background-color: #dedede;
 }
 .feed-pagination-btn:hover {
 	background-color: #5aa2e9;
 }
 .feed-pagination-btn:first-child {
-	border-right: 1px solid #eee;
+	border-right: 1px solid #eee !important;
 }
 .feed-pagination-btn:last-child {
-	border-left: 1px solid #eee;
+	border-left: 1px solid #eee !important;
 }
