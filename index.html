@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Avito | Frontend developer challenge</title>
+	<link href="https://fonts.googleapis.com/css?family=Cairo:300,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="feed-item feed-filter" id="feed-filter">
+			<div class="feed-filter-item">
+				<input type="text" id="text_filter" placeholder="Looking for something?" class="feed-filter-input">
+				<button id="text_filter_btn" class="feed-filter-input">Filter</button>
+			</div>
+			<div class="feed-filter-item">
+				<label for="items_to_show" class="feed-filter-input">Items to show: </label>
+				<select id="items_to_show" class="feed-filter-input">
+					<option value="10">10</option>
+					<option value="25">25</option>
+					<option value="50">50</option>
+				</select>
+			</div>
+			<div class="feed-filter-item">
+				<input type="checkbox" id="most_liked_users" class="feed-filter-input">
+				<label for="most_liked_users" class="feed-filter-input">> 10 likes users</label>
+			</div>
+		</div><!-- End .feed-filter -->
+		<div class="feed-item feed-msg hide" id="feed-msg"> No results </div><!-- End .feed-msg -->
+		<div class="feed" id="feed"></div><!-- End .feed -->
+		<div class="feed-pagination" id="feed-pagination">
+			<input type="button" value="Previous" id="previous" class="feed-pagination-btn half disabled">
+			<input type="button" value="Next" id="next" class="feed-pagination-btn half disabled">
+		</div><!-- End .feed-pagination -->
+	</div>
+
+	<script type="text/javascript" src="js/feed.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
