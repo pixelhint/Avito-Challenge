@@ -1,4 +1,4 @@
-# Vimeo Frontend developer Challenge
+# Avito Frontend developer Challenge
 
 **Author Name :** Mohamed Ait Ijja
 
