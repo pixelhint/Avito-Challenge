@@ -269,14 +269,14 @@ class VimeoFeed{
 		const $previousBtn = document.getElementById('previous');
 		$previousBtn.addEventListener("click", function(event) {
 			event.preventDefault();
-			this.previousPage();
+			if( !$previousBtn.classList.contains('disabled') ) this.previousPage();
 		}.bind(this), false);
 
 		// Textbox event
 		const $nextBtn = document.getElementById('next');
 		$nextBtn.addEventListener("click", function(event) {
 			event.preventDefault();
-			this.nextPage();
+			if( !$nextBtn.classList.contains('disabled') ) this.nextPage();
 		}.bind(this), false);
 	}
 
