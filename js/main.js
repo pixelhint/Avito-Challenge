@@ -2,6 +2,12 @@ class VimeoFeed{
 	constructor(){
 		// Vimeo feed
 		this.feed = window.vimeoFeed;
+		// Trow console error if vimeo feed is not defined
+		if( typeof this.feed == 'undefined' ){
+			console.error("Error: undefined vimeo feed data.");
+			return false;
+		}
+
 		// Pagination vars
 		this.currentPage = 0;
 		this.perPageFilter = 10;
@@ -16,12 +22,6 @@ class VimeoFeed{
 		this.textFilter = false;
 		this.textFilterInput = '';
 
-
-		// Trow console error if vimeo feed is not defined
-		if( typeof this.feed == 'undefined' ){
-			console.error("Error: undefined vimeo feed data.");
-			return false;
-		}
 		this.feedLength = this.feed.data.length;
 		this.descriptionLength = 250;
 
@@ -83,10 +83,13 @@ class VimeoFeed{
 		const data = this.sliceFeed();
 		this.handleEmptyResult(data);
 		this.handlePagination(data);
-		for (var i = 0; i < data.length; i++) {
-			// console.log('- ' + data[i].user.name);
-			this.generateDOM(data[i]);
+		let frag = document.createDocumentFragment();
+		let feedDOM = null;
+		for (let i = 0; i < data.length; i++) {
+			feedDOM = this.generateDOM(data[i], frag);
+			frag.appendChild(feedDOM);
 		}
+		feed.appendChild(frag);
 	}
 
 	/*
@@ -208,7 +211,7 @@ class VimeoFeed{
 
 		
 		let statsLi, statsLabel;
-		for (var i = 0; i < stats.length; i++) {
+		for (let i = 0; i < stats.length; i++) {
 			statsLi = document.createElement('li');
 			statsLabel = document.createElement('strong');
 			statsLi.innerText = stats[i].total;
@@ -224,8 +227,7 @@ class VimeoFeed{
 		feedImgLink.appendChild(feedImg);
 		feedItem.appendChild(feedImgLink);
 		feedItem.appendChild(feedBody);
-
-		feed.appendChild(feedItem.cloneNode(true));
+		return feedItem.cloneNode(true);
 	}
 
 	/*
@@ -298,4 +300,4 @@ class VimeoFeed{
 		this.pageOffsetEnd = this.perPageFilter;
 	}
 }
-var v = new VimeoFeed();
+let v = new VimeoFeed();
